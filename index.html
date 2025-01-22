@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/previews/037/044/052/non_2x/ai-generated-studio-shot-of-black-headphones-over-music-note-explosion-background-with-empty-space-for-text-photo.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="music-wrapper">
+      <h1 id="title" class="title">Isko_Alvarez</h1>
+      <img
+        id="cover"
+        class="img"
+        src="./imgs/Alvarez_Remix.jpg"
+        alt="Isko_Alvarez-img"
+        width="200"
+      />
+      <audio id="audio" src="./audios/Alvarez_Remix.mp3"></audio>
+      <div>
+        <input
+          type="range"
+          name=""
+          id="voice"
+          step="1"
+          min="0"
+          max="100"
+          value="20"
+        />
+        <span id="audio-valume">20</span>
+      </div>
+      <div class="button-wrapper">
+        <button class="btn" id="backward">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+        <button class="btn" id="play">
+          <i class="fa-regular fa-circle-play"></i>
+        </button>
+        <button class="btn" id="pause">
+          <i class="fa-regular fa-circle-pause"></i>
+        </button>
+        <button class="btn" id="forward">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

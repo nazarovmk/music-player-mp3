@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  /* background: linear-gradient(118deg, #e95c09, #8541f7); */
+  animation: bg-animation 15s infinite linear;
+  animation-play-state: running;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-image: url(../bacground-imgs/bacground\ img1.jpg);
+  }
+  20% {
+    background-image: url(../bacground-imgs/bacground\ img2.jpg);
+  }
+  40% {
+    background-image: url(../bacground-imgs/bacground\ img3.jpg);
+  }
+  60% {
+    background-image: url(../bacground-imgs/bacground\ img4.jpg);
+  }
+  80% {
+    background-image: url(../bacground-imgs/bacground\ img5.jpg);
+  }
+  100% {
+    background-image: url(../bacground-imgs/bacground\ img6.jpg);
+  }
+}
+
+.music-wrapper {
+  padding: 30px 50px 30px 50px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.music-wrapper:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  transition: 0.5s ease;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  border-color: transparent;
+  color: white;
+  background-clip: text;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  animation: rotating 18s infinite linear;
+  animation-play-state: running;
+}
+
+#audio-valume {
+  font-size: 12px;
+  color: white;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#voice {
+  margin-bottom: 20px;
+}
+
+.button-wrapper {
+  justify-content: center;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: cadetblue;
+}
+
+#play {
+  font-size: 36px;
+  color: #293e53;
+}
+
+#pause {
+  display: none;
+  color: #293e53;
+  font-size: 36px;
+}
+
+/*  */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: linear-gradient(to right, #ff7f50, #1e90ff);
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 2px solid #ff7f50;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
