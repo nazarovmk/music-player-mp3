@@ -7,6 +7,10 @@ const voiceBtn = document.getElementById("voice");
 const audioVolume = document.getElementById("audio-valume");
 const cover = document.getElementById("cover");
 const title = document.getElementById("title");
+const proccessContainer = document.querySelector(".proccess-container");
+const currentTimeElement = document.getElementById("current-time");
+const totalTimeElement = document.getElementById("total-time");
+const heart = document.getElementById("heart");
 
 let indexContent = 0;
 
@@ -60,6 +64,24 @@ voiceBtn.addEventListener("input", () => {
   audioVolume.textContent = voiceBtn.value;
 });
 
+heart.addEventListener("click", () => {
+  if (heart.style.color === "red") {
+    heart.style.color = "white";
+  } else {
+    heart.style.color = "red";
+  }
+});
+
+backwardBtn.addEventListener("click", () => {
+  pauseBtn.style.display = "block";
+  playBtn.style.display = "none";
+});
+
+forwardBtn.addEventListener("click", () => {
+  pauseBtn.style.display = "block";
+  playBtn.style.display = "none";
+});
+
 playBtn.addEventListener("click", () => {
   audio.play();
 });
@@ -78,6 +100,29 @@ pauseBtn.addEventListener("click", () => {
   pauseBtn.style.display = "none";
 });
 
+audio.addEventListener("loadedmetadata", function () {
+  const duration = audio.duration;
+  totalTimeElement.textContent = formatTime(duration);
+});
+
+function playingMusic() {
+  const currentTime = audio.currentTime;
+  const duration = audio.duration;
+
+  proccessContainer.style.width = `${(currentTime / duration) * 100}%`;
+
+  currentTimeElement.textContent = formatTime(currentTime);
+}
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60);
+  return `${minutes < 10 ? "0" + minutes : minutes}:${
+    sec < 10 ? "0" + sec : sec
+  }`;
+}
+
 forwardBtn.addEventListener("click", nextMusic);
 backwardBtn.addEventListener("click", prevMusic);
 audio.addEventListener("ended", nextMusic);
+audio.addEventListener("timeupdate", playingMusic);
